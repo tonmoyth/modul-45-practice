@@ -1,11 +1,14 @@
 import React from 'react';
 import Home from '../Home/Home';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 
 
 const Root = () => {
+
+    const navigation = useNavigation();
+    const isNavigating = Boolean(navigation.location);
     return (
         <div>
             <Header></Header>
@@ -13,6 +16,7 @@ const Root = () => {
                 <aside className='bg-red-400 h-screen p-4'>
                     <h1>Side bar</h1>
                 </aside>
+                {isNavigating && <h1>Loading..</h1>}
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>

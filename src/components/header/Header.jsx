@@ -11,7 +11,15 @@ const Header = () => {
                 <li><NavLink to="/about">about</NavLink></li>
                 <li><NavLink to="/user">User</NavLink></li>
                 <li><NavLink to="/todos">Todos</NavLink></li>
-                <li><NavLink to="/posts">posts</NavLink></li>
+                <li><NavLink to="/posts">
+                {({isPending})=>(
+                    <span>
+                        post 
+                        {isPending && <span style={{ marginLeft: '5px' }}>Loading...</span>}
+
+                    </span>
+                )}
+                </NavLink></li>
             </ul>
         </div>
     );

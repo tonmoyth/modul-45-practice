@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
 const UserDetails = ({user}) => {
     const {id,name,username,phone} = user;
     
@@ -10,6 +11,8 @@ const UserDetails = ({user}) => {
         padding: '10px',
         margin: '10px'
     }
+
+    
     return (
         <div style={useStyle}>
             <h1>{name}</h1>
